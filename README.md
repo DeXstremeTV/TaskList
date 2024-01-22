@@ -1,6 +1,7 @@
 # TaskList
 
 Task Tracker Application:
+Using Angular for FE, and picocss for styling.
 Create a basic task tracker application that allows users to add, edit, and delete tasks. The application can have the following features:
 
 Task List: Display a list of tasks with details such as task name, description, due date, and status.
