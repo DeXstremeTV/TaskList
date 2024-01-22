@@ -8,6 +8,7 @@
                     <input type="checkbox" (change)="toggleCheck(item)" [checked]="item.done" />
                 </label>
                 <button (click)="deleteTodo(item.id)">Delete</button>
+                <button (click)="editTodo(item.title, item.id)">Edit</button>
             </li>
         </ul>
     </div>

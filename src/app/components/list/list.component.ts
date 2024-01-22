@@ -2,6 +2,7 @@ import { TodoModel } from './../../model/todo-items-model';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { title } from 'process';
 
 @Component({
   selector: 'app-list',
@@ -53,7 +54,13 @@ export class ListComponent {
   }
 
   // edit task
-
+  public editTodo(todoTitle: string, todoId: number): void {
+    for(let i of this.todo){
+      if (i.id == todoId) {
+        i.title = todoTitle;
+      }
+    }
+  }
   // download todos
     // POST
     // download from BE
