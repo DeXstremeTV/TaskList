@@ -2,17 +2,23 @@
     <div class="container">
         <h1>Todo List</h1>
         <ul>
-            <li class="list-items" *ngFor="let item of todo">
+            <li class="list-items" *ngFor="let item of todo; let i = index">
                 <label>
-                    <input type="checkbox" (change)="toggleCheck(item)">
                     {{ item.title }}
+                    <input type="checkbox" (change)="toggleCheck(item)" [checked]="item.done" />
                 </label>
+                <button (click)="deleteTodo(item.id)">Delete</button>
             </li>
         </ul>
     </div>
     <div class="container">
         <div>
-            <button (click)="downloadTodos()">Download todos</button>
+            <form>
+                <label for="userInput">Enter a String:</label>
+                <input type="text" name="newTodo" [(ngModel)]="newTodo" required>
+                <br>
+            </form>
+            <button (click)="addTodo()">Add todo</button>
         </div>
     </div>
 </div>
