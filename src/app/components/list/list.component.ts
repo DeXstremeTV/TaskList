@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { TodoModel } from '../../model/todo-items-model';
 import { CommonModule } from '@angular/common';
+import * as fs from 'fs';
+import * as path from 'path';
 
 @Component({
   selector: 'app-list',
@@ -34,6 +36,11 @@ export class ListComponent {
 
   // edit task
 
-  // save to file
+  // download todos
+  public downloadTodos(): void {
+    // POST
 
+    // download from BE
+  }
+  
 }
