@@ -1,8 +1,11 @@
-<div class="list">
+<div class="container">
     <h1>Todo List</h1>
     <ul>
-        <li *ngFor="let item of todo">
-            {{ item.title }}
+        <li class="list-items" *ngFor="let item of todo">
+            <label>
+                <input type="checkbox" (change)="toggleCheck(item)">
+                {{ item.title }}
+            </label>
         </li>
     </ul>
 </div>

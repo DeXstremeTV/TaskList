@@ -13,16 +13,20 @@ export class ListComponent {
 
   todo: TodoModel[] = [
     {
-    id: 2, 
-    title: "wew"
+      id: 2, 
+      title: "feed the dragon",
+      done: false
     },
     {
-        id: 4,
-        title: "whatever"
+      id: 4,
+      title: "ward the jungle",
+      done: false
     }
   ];
 
-
+  toggleCheck(item: TodoModel): void {
+    item.done = !item.done;
+  }
 
 
 }
