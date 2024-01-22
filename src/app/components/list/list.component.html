@@ -1,11 +1,16 @@
-<div class="container">
-    <h1>Todo List</h1>
-    <ul>
-        <li class="list-items" *ngFor="let item of todo">
-            <label>
-                <input type="checkbox" (change)="toggleCheck(item)">
-                {{ item.title }}
-            </label>
-        </li>
-    </ul>
+<div>
+    <div class="container">
+        <h1>Todo List</h1>
+        <ul>
+            <li class="list-items" *ngFor="let item of todo">
+                <label>
+                    <input type="checkbox" (change)="toggleCheck(item)">
+                    {{ item.title }}
+                </label>
+            </li>
+        </ul>
+    </div>
+    <div class="buttons">
+        <button onclick="downloadTodos()">Download todos</button>
+    </div>
 </div>
