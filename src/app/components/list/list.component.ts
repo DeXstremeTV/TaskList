@@ -8,23 +8,18 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './list.component.html',
-  styleUrl: './list.component.css'
+  styleUrl: './list.component.css',
 })
-
-
 export class ListComponent {
-  newTodo: string = "";
-  
+  newTodo: string = '';
+  newTitle: any;
+  openModal: boolean = false;
+
   todo: TodoModel[] = [
     {
-      id: 2, 
-      title: "feed the dragon",
-      done: false
-    },
-    {
-      id: 4,
-      title: "ward the jungle",
-      done: true
+      id: 2,
+      title: 'feed the dragon',
+      done: false,
     }
   ];
 
@@ -32,29 +27,39 @@ export class ListComponent {
     item.done = !item.done;
   }
 
-  // add task
   public addTodo(): void {
     let newTodo: TodoModel = {
-      id: 2 + Math.random(), 
+      id: 2 + Math.random(),
       title: this.newTodo,
-      done: false
+      done: false,
     };
 
     this.todo.push(newTodo);
   }
 
-  // delete task
   public deleteTodo(todoId: number): void {
-    for(let i of this.todo){
+    for (let i of this.todo) {
       if (i.id == todoId) {
-        this.todo = this.todo.filter(i => i.id !== todoId );
+        this.todo = this.todo.filter((i) => i.id !== todoId);
       }
     }
+    this.toggleModal();
   }
 
-  // edit task
+  public editTodo(newTitle: string, todoId: number): void {
+    for (let i of this.todo) {
+      if (i.id == todoId) {
+        i.title = newTitle;
+      }
+    }
+    this.toggleModal();
+  }
+
+  public toggleModal(): void {
+    this.openModal = !this.openModal;
+  }
 
   // download todos
-    // POST
-    // download from BE
+  // POST
+  // download from BE
 }
