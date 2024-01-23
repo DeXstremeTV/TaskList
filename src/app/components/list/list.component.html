@@ -1,28 +1,28 @@
 <div>
-    <div class="container">
-        <h1>To do List</h1>
-        <ul>
-            <li class="list-items" *ngFor="let item of todo; let i = index">
-                <label>
-                    {{ item.title }}
-                    <input type="checkbox" (change)="toggleCheck(item)" [checked]="item.done" />
-                </label>
-                <button (click)="deleteTodo(item.id)">Delete</button>
-                <label for="userInput">Enter a String:</label>
+  <div class="container">
+    <h1>To do List</h1>
+    <ul>
+      <li class="list-items" *ngFor="let item of todo; let i = index">
+        <label>
+          {{ item.title }}
+          <input type="checkbox" (change)="toggleCheck(item)" [checked]="item.done" />
+        </label>
+        <button (click)="deleteTodo(item.id)">Delete</button>
+        <label for="userInput">Enter a String:</label>
         <input type="text" name="newTitle" [(ngModel)]="todoTitles[i]" required>
         <button (click)="editTodo(todoTitles[i], item.id)">Edit</button>
-            </li>
-        </ul>
-        
+      </li>
+    </ul>
+
+  </div>
+  <div class="container">
+    <div>
+      <form>
+        <label for="userInput">Enter a String:</label>
+        <input type="text" name="newTodo" [(ngModel)]="newTodo" required>
+        <br>
+      </form>
+      <button (click)="addTodo()">Add to do</button>
     </div>
-    <div class="container">
-        <div>
-            <form>
-                <label for="userInput">Enter a String:</label>
-                <input type="text" name="newTodo" [(ngModel)]="newTodo" required>
-                <br>
-            </form>
-            <button (click)="addTodo()">Add to do</button>
-        </div>
-    </div>
+  </div>
 </div>
