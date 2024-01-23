@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class ListComponent {
   newTodo: string = '';
-  editedTodoTile: string = '';
   newTitle: any;
   openModal: boolean = false;
 

@@ -14,13 +14,13 @@
         <!-- Modal -->
         <dialog [open]="openModal">
           <article>
-            <label for="userInput">Enter a String:</label>
-            <input type="text" name="newTitle" [(ngModel)]="newTitle" required>
+            <label for="userInput">Edit to do:</label>
+            <input type="text" name="newTitle" [(ngModel)]="newTitle">
             <footer>
               <button (click)="deleteTodo(item.id)">Delete</button>
               <button (click)="editTodo(newTitle, item.id)">Save Edit</button>
               <button class="contrast" data-target="modal-example" (click)="toggleModal()">
-                close
+                Close
               </button>
             </footer>
           </article>
@@ -31,11 +31,11 @@
   <div class="container">
     <div>
       <form>
-        <label for="userInput">Add new todo:</label>
+        <label for="userInput">Add new to do:</label>
         <input type="text" name="newTodo" [(ngModel)]="newTodo">
         <br>
       </form>
-      <button (click)="addTodo()">Add to do</button>
+      <button (click)="addTodo()">Add</button>
     </div>
   </div>
 </div>
