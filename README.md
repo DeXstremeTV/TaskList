@@ -1,5 +1,8 @@
 # TaskList
 
+![image](https://github.com/DeXstremeTV/TaskList/assets/28793603/68986894-d3cc-4ec2-816b-a1537cb42814)
+
+
 Task Tracker Application:
 Using Angular for FE, and picocss for styling.
 Create a basic task tracker application that allows users to add, edit, and delete tasks. The application can have the following features:
