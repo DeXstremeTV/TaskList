@@ -13,22 +13,15 @@ import { FormsModule } from '@angular/forms';
 export class ListComponent {
   newTodo: string = '';
   editedTodoTile: string = '';
-  todoTitles: string[] = [];
-
-  todoTitle: any;
-  opendialog: any;
+  newTitle: any;
+  openModal: boolean = false;
 
   todo: TodoModel[] = [
     {
       id: 2,
       title: 'feed the dragon',
       done: false,
-    },
-    {
-      id: 4,
-      title: 'ward the jungle',
-      done: true,
-    },
+    }
   ];
 
   public toggleCheck(item: TodoModel): void {
@@ -51,15 +44,20 @@ export class ListComponent {
         this.todo = this.todo.filter((i) => i.id !== todoId);
       }
     }
+    this.toggleModal();
   }
 
-  public editTodo(todoTitle: string, todoId: number): void {
+  public editTodo(newTitle: string, todoId: number): void {
     for (let i of this.todo) {
       if (i.id == todoId) {
-        i.title = todoTitle;
+        i.title = newTitle;
       }
     }
-    this.todoTitle = '';
+    this.toggleModal();
+  }
+
+  public toggleModal(): void {
+    this.openModal = !this.openModal;
   }
 
   // download todos
