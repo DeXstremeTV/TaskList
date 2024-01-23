@@ -1,6 +1,6 @@
 <div>
     <div class="container">
-        <h1>Todo List</h1>
+        <h1>To do List</h1>
         <ul>
             <li class="list-items" *ngFor="let item of todo; let i = index">
                 <label>
@@ -8,9 +8,12 @@
                     <input type="checkbox" (change)="toggleCheck(item)" [checked]="item.done" />
                 </label>
                 <button (click)="deleteTodo(item.id)">Delete</button>
-                <button (click)="editTodo(item.title, item.id)">Edit</button>
+                <label for="userInput">Enter a String:</label>
+        <input type="text" name="newTitle" [(ngModel)]="todoTitles[i]" required>
+        <button (click)="editTodo(todoTitles[i], item.id)">Edit</button>
             </li>
         </ul>
+        
     </div>
     <div class="container">
         <div>
@@ -19,7 +22,7 @@
                 <input type="text" name="newTodo" [(ngModel)]="newTodo" required>
                 <br>
             </form>
-            <button (click)="addTodo()">Add todo</button>
+            <button (click)="addTodo()">Add to do</button>
         </div>
     </div>
 </div>

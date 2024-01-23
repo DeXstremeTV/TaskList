@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { title } from 'process';
+import internal from 'stream';
 
 @Component({
   selector: 'app-list',
@@ -15,6 +16,9 @@ import { title } from 'process';
 
 export class ListComponent {
   newTodo: string = "";
+  editedTodoTile: string = "";
+  todoTitles: string[] = []
+  
   
   todo: TodoModel[] = [
     {
@@ -28,6 +32,8 @@ export class ListComponent {
       done: true
     }
   ];
+todoTitle: any;
+opendialog: any;
 
   public toggleCheck(item: TodoModel): void {
     item.done = !item.done;
@@ -60,7 +66,9 @@ export class ListComponent {
         i.title = todoTitle;
       }
     }
+    this.todoTitle = "";
   }
+
   // download todos
     // POST
     // download from BE
