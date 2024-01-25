@@ -5,16 +5,19 @@ import { ListComponent } from './components/list/list.component';
 
 export const routes: Routes = [
     {
+        canActivate:[],
         path: '',
         component: RegisterComponent,
         title: "Register"
     },
     {
+        canActivate:[],
         path: 'login',
         component: LoginComponent,
         title: "Login"
     },
     {
+        canActivate:[],
         path: 'todo',
         component: ListComponent,
         title: "Todo"
