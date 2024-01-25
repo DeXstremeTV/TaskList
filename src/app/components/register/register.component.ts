@@ -4,7 +4,6 @@ import { Register } from '../../model/register';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-
 @Component({
   selector: 'app-register',
   standalone: true,
@@ -14,9 +13,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class RegisterComponent {
   registerDto = new Register();
-  /**
-   *
-   */
+
   constructor( private authService: AuthenticationService) {}
 
   register(registerDto: Register){

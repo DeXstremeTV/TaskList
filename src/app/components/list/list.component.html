@@ -1,5 +1,6 @@
 <div>
   <div>
+
     <body>
       <div class="container">
         <h1>To do List</h1>
@@ -8,17 +9,9 @@
           <li class="list-items" *ngFor="let item of todo; let i = index">
             <label>
               {{ item.title }}
-              <input
-                type="checkbox"
-                (change)="toggleCheck(item)"
-                [checked]="item.done"
-              />
+              <input type="checkbox" (change)="toggleCheck(item)" [checked]="item.done" />
             </label>
-            <button
-              class="contrast"
-              data-target="modal-example"
-              (click)="toggleModal()"
-            >
+            <button class="contrast" data-target="modal-example" (click)="toggleModal()">
               Edit
             </button>
             <!-- Modal -->
@@ -31,11 +24,7 @@
                   <button (click)="editTodo(newTitle, item.id)">
                     Save Edit
                   </button>
-                  <button
-                    class="contrast"
-                    data-target="modal-example"
-                    (click)="toggleModal()"
-                  >
+                  <button class="contrast" data-target="modal-example" (click)="toggleModal()">
                     Close
                   </button>
                 </footer>

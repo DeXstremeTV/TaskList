@@ -15,17 +15,11 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class ListComponent {
   title = 'TaskList';
-  /**
-   *
-   */
-  constructor(private downloadAndCreateService: DownloadAndCreateService) {}
-
- 
-
-
   newTodo: string = '';
   newTitle: any;
   openModal: boolean = false;
+  
+  constructor(private downloadAndCreateService: DownloadAndCreateService) {}
 
   todo: TodoModel[] = [
     {

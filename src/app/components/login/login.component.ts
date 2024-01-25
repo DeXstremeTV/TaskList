@@ -11,9 +11,6 @@ import { AuthenticationService } from '../../services/Authentication.service';
   styleUrl: './login.component.css'
 })
 
-
-
-
 export class LoginComponent {
   loginDto = new Login();
   jwtDto = new JwtAuth();
