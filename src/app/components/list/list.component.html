@@ -1,41 +1,49 @@
 <div>
-  <div class="container">
-    <h1>To do List</h1>
-    <ul>
-      <!-- list item-->
-      <li class="list-items" *ngFor="let item of todo; let i = index">
-        <label>
-          {{ item.title }}
-          <input type="checkbox" (change)="toggleCheck(item)" [checked]="item.done" />
-        </label>
-        <button class="contrast" data-target="modal-example" (click)="toggleModal()">
-          Edit
-        </button>
-        <!-- Modal -->
-        <dialog [open]="openModal">
-          <article>
-            <label for="userInput">Edit to do:</label>
-            <input type="text" name="newTitle" [(ngModel)]="newTitle">
-            <footer>
-              <button (click)="deleteTodo(item.id)">Delete</button>
-              <button (click)="editTodo(newTitle, item.id)">Save Edit</button>
-              <button class="contrast" data-target="modal-example" (click)="toggleModal()">
-                Close
-              </button>
-            </footer>
-          </article>
-        </dialog>
-      </li>
-    </ul>
-  </div>
-  <div class="container">
-    <div>
-      <form>
-        <label for="userInput">Add new to do:</label>
-        <input type="text" name="newTodo" [(ngModel)]="newTodo">
-        <br>
-      </form>
-      <button (click)="addTodo()">Add</button>
-    </div>
+  <div>
+
+    <body>
+      <div class="container">
+        <h1>To do List</h1>
+        <ul>
+          <!-- list item-->
+          <li class="list-items" *ngFor="let item of todo; let i = index">
+            <label>
+              {{ item.title }}
+              <input type="checkbox" (change)="toggleCheck(item)" [checked]="item.done" />
+            </label>
+            <button class="contrast" data-target="modal-example" (click)="toggleModal()">
+              Edit
+            </button>
+            <!-- Modal -->
+            <dialog [open]="openModal">
+              <article>
+                <label for="userInput">Edit to do:</label>
+                <input type="text" name="newTitle" [(ngModel)]="newTitle" />
+                <footer>
+                  <button (click)="deleteTodo(item.id)">Delete</button>
+                  <button (click)="editTodo(newTitle, item.id)">
+                    Save Edit
+                  </button>
+                  <button class="contrast" data-target="modal-example" (click)="toggleModal()">
+                    Close
+                  </button>
+                </footer>
+              </article>
+            </dialog>
+          </li>
+        </ul>
+      </div>
+      <div class="container">
+        <div>
+          <form>
+            <label for="userInput">Add new to do:</label>
+            <input type="text" name="newTodo" [(ngModel)]="newTodo" />
+            <br />
+          </form>
+          <button (click)="addTodo()">Add</button>
+        </div>
+        <button (click)="createAndDownload()">Dowload</button>
+      </div>
+    </body>
   </div>
 </div>

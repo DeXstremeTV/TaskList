@@ -2,25 +2,31 @@ import { TodoModel } from './../../model/todo-items-model';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { DownloadAndCreateService } from '../../services/download-and-create.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, HttpClientModule],
+  providers: [DownloadAndCreateService],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css',
 })
 export class ListComponent {
+  title = 'TaskList';
   newTodo: string = '';
   newTitle: any;
   openModal: boolean = false;
+  
+  constructor(private downloadAndCreateService: DownloadAndCreateService) {}
 
   todo: TodoModel[] = [
     {
       id: 2,
       title: 'feed the dragon',
       done: false,
-    }
+    },
   ];
 
   public toggleCheck(item: TodoModel): void {
@@ -60,6 +66,23 @@ export class ListComponent {
   }
 
   // download todos
+
   // POST
   // download from BE
+  createAndDownload(): void {
+    this.downloadAndCreateService.createAndDownloadFile(this.todo).subscribe(
+      (blob) => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'todo_file.txt'; // Update the filename if needed
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+      },
+      (error) => {
+        console.error('Error creating and downloading file:', error);
+      }
+    );
+  }
 }
