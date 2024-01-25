@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DownloadAndCreateService } from '../../services/download-and-create.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-list',
@@ -14,10 +14,14 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   styleUrl: './list.component.css',
 })
 export class ListComponent {
+  title = 'TaskList';
   /**
    *
    */
   constructor(private downloadAndCreateService: DownloadAndCreateService) {}
+
+ 
+
 
   newTodo: string = '';
   newTitle: any;

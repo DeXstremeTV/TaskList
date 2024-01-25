@@ -8,12 +8,12 @@ import { TodoModel } from '../model/todo-items-model';
     providedIn: 'root',
 })
 export class DownloadAndCreateService {
-    private baseUrl = 'http://localhost:5062';
+    private baseUrl = 'https://localhost:7107';
 
     constructor(private http: HttpClient) {}
 
     createAndDownloadFile(todoModel: TodoModel[]): Observable<Blob> {
-        const url = "http://localhost:5062/api/File/createAndDownload";
+        const url = "http://localhost:7107/api/File/createAndDownload";
 
         return this.http.post<Blob>(url, todoModel, { responseType: 'blob' as 'json' });
     }
