@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Login } from '../../model/login';
 import { JwtAuth } from '../../model/jwt-auth';
-import { AuthenticationService } from '../../services/Authentication.service';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [],
+  providers: [AuthenticationService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

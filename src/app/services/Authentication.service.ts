@@ -6,20 +6,19 @@ import { Register } from '../model/register';
 import { Login } from '../model/login';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root',
 })
-export class AuthenticationService{
-    baseUrl= "https://localhost:7107"
-    registerUrl= "/api/AuthManagement/register"
-    loginUrl= "/api/AuthManagement/login"
+export class AuthenticationService {
+  baseUrl = 'https://localhost:7107';
+  registerUrl = '/api/AuthManagement/register';
+  loginUrl = '/api/AuthManagement/login';
 
-    constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-
-    public register(user: Register): Observable<JwtAuth> {
-        return this.http.post<JwtAuth>(`${this.baseUrl}${this.registerUrl}`, user);
-    }
-    public login(user: Login): Observable<JwtAuth> {
-        return this.http.post<JwtAuth>(`${this.baseUrl}${this.loginUrl}`, user);
-    }
+  public register(user: Register): Observable<JwtAuth> {
+    return this.http.post<JwtAuth>(`${this.baseUrl}${this.registerUrl}`, user);
+  }
+  public login(user: Login): Observable<JwtAuth> {
+    return this.http.post<JwtAuth>(`${this.baseUrl}${this.loginUrl}`, user);
+  }
 }
