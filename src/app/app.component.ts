@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ListComponent } from './components/list/list.component';
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from "./components/register/register.component";
 import { HttpClientModule } from '@angular/common/http';
+
 
 @Component({
     selector: 'app-root',
