@@ -6,6 +6,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from "./components/register/register.component";
 import { HttpClientModule } from '@angular/common/http';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
 
 @Component({
     selector: 'app-root',
